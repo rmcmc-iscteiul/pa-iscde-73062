@@ -18,6 +18,7 @@ import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Text;
 
 import pt.iscte.pidesco.extensibility.PidescoView;
+import pt.iscte.pidesco.outline.service.OutlineServices;
 
 public class OutlineView implements PidescoView{
 
@@ -87,9 +88,19 @@ public class OutlineView implements PidescoView{
 			System.out.println(OutlineActivator.getInstance().getServico().getOpenedFile());
 			nos = fr.getNos();			
 			tree.setInput(nos);
+			
 		}
+		
+		
 
+	}
 
+	public TreeViewer getTree() {
+		return tree;
+	}
+
+	public void setTree(TreeViewer tree) {
+		this.tree = tree;
 	}
 
 	public static OutlineView getInstance () {

@@ -12,7 +12,8 @@ import org.osgi.framework.ServiceRegistration;
 
 import pt.iscte.pidesco.javaeditor.service.JavaEditorServices;
 import pt.iscte.pidesco.outline.service.OutlineServices;
-import pt.iscte.pidesco.outline.service.ProjectBrowserServices;
+import pt.iscte.pidesco.projectbrowser.service.ProjectBrowserServices;
+
 
 public class OutlineActivator implements BundleActivator{
 	
