@@ -12,7 +12,8 @@ Require-Bundle: org.eclipse.ui;bundle-version="3.106.0",
  pt.iscte.pidesco;bundle-version="0.1.0",
  pt.iscte.pidesco.javaeditor;bundle-version="1.1.0",
  pt.iscte.pidesco.projectbrowser
-Export-Package: pt.iscte.pidesco.outline.internal;x-internal:=true,
+Export-Package: pt.iscte.pidesco.outline.extensibility,
+ pt.iscte.pidesco.outline.internal;x-internal:=true,
  pt.iscte.pidesco.outline.service
 Bundle-Activator: pt.iscte.pidesco.outline.internal.OutlineActivator
 Bundle-Version: 0.1
