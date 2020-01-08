@@ -49,13 +49,13 @@
 
    <element name="highlight">
       <complexType>
-         <attribute name="classe" type="string" use="required">
+         <attribute name="class" type="string" use="required">
             <annotation>
                <documentation>
                   
                </documentation>
                <appinfo>
-                  <meta.attribute kind="java" basedOn=":pt.iscte.pidesco.outline.extensibility.getStringHighlight"/>
+                  <meta.attribute kind="java" basedOn=":pt.iscte.pidesco.outline.extensibility.GetStringHighlight"/>
                </appinfo>
             </annotation>
          </attribute>

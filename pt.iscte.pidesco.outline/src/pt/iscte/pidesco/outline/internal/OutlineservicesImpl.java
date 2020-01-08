@@ -19,7 +19,7 @@ import java.util.List;
 
 public class OutlineservicesImpl implements OutlineServices{
 
-	private static final String EXT_POINT_HIGHLIGHT = "pt.iscte.pidesco.highlight";
+	private static final String EXT_POINT_HIGHLIGHT = "pt.iscte.pidesco.outline.highlight";
 
 	public  OutlineservicesImpl () {
 		IExtensionRegistry reg = Platform.getExtensionRegistry();
@@ -54,14 +54,18 @@ public class OutlineservicesImpl implements OutlineServices{
 	public void highlightText(String methodname) {
 
 		if(!(methodname == null)) {
-			TreeViewer t = OutlineView.getInstance().getTree();
-			Tree tree = t.getTree();
+			OutlineView outlineview = OutlineView.getInstance();
+			if (outlineview != null) {
+				TreeViewer t = OutlineView.getInstance().getTree();
+				Tree tree = t.getTree();
 
-			for (TreeItem ti : tree.getItems()) {
-				if (ti.getText().contains(methodname)) {
-					ti.setBackground(new Color(null, 0,255,255));
+				for (TreeItem ti : tree.getItems()) {
+					if (ti.getText().contains(methodname)) {
+						ti.setBackground(new Color(null, 0,255,255));
+					}
 				}
 			}
+
 		}
 
 
