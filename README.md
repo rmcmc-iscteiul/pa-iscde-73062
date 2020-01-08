@@ -9,4 +9,4 @@ The view I developped aims to display the opened class structure in a tree view 
 # Outline Services:
 In order for this plugin to be used by others there are several services that can be used and are available on an interface.
 
-[View more info about Outline Services] (https://github.com/rmcmc-iscteiul/pa-iscde-73062/wiki/Outline-Services)
+[View more info about Outline Services](https://github.com/rmcmc-iscteiul/pa-iscde-73062/wiki/Outline-Services)
