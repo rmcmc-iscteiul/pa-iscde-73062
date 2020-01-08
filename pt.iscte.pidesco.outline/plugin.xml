@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?eclipse version="3.4"?>
 <plugin>
+   <extension-point id="outline" name="Highlight" schema="schema/outline.exsd"/>
    <extension
          id="tree"
          name="Outline"

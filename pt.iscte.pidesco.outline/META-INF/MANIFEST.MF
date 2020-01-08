@@ -11,11 +11,10 @@ Require-Bundle: org.eclipse.ui;bundle-version="3.106.0",
  org.eclipse.core.resources,
  pt.iscte.pidesco;bundle-version="0.1.0",
  pt.iscte.pidesco.javaeditor;bundle-version="1.1.0",
- pt.iscte.pidesco.search
-Export-Package: pt.iscte.pidesco.outline.internal,
+ pt.iscte.pidesco.projectbrowser
+Export-Package: pt.iscte.pidesco.outline.internal;x-internal:=true,
  pt.iscte.pidesco.outline.service
 Bundle-Activator: pt.iscte.pidesco.outline.internal.OutlineActivator
 Bundle-Version: 0.1
 Bundle-ActivationPolicy: lazy
-Import-Package: org.eclipse.jdt.core.dom,
- pt.iscte.pidesco.search.service
+Import-Package: org.eclipse.jdt.core.dom

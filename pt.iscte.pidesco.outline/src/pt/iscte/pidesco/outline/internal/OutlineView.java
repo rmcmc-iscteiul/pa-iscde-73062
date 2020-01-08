@@ -23,8 +23,7 @@ import org.eclipse.swt.widgets.Tree;
 import org.eclipse.swt.widgets.TreeItem;
 
 import pt.iscte.pidesco.extensibility.PidescoView;
-import pt.iscte.pidesco.search.internal.SearchServicesImpl;
-import pt.iscte.pidesco.search.service.SearchServices;
+
 
 public class OutlineView implements PidescoView{
 
@@ -97,22 +96,22 @@ public class OutlineView implements PidescoView{
 			nos = fr.getNos();			
 			tree.setInput(nos);
 			
-			Tree t = tree.getTree();
-			for (TreeItem ti : t.getItems()) {
-				if (ti.getBackground().equals(new Color (null, 0,255,255))){
-					SearchServices ss = new SearchServicesImpl();
-					List <String> lista = ss.getMethodLines();
-					for (int i = 0; i < lista.size(); i++) {
-						String [] sub1 = lista.get(i).split(" - ");
-						String methodname = sub1[1];
-						if (ti.getText().contains(methodname)) {
-							String [] sub2 = lista.get(i).split("::");
-							String line = sub1[1];
-							text.setText(line);
-						}
-					}
-				}
-			}
+//			Tree t = tree.getTree();
+//			for (TreeItem ti : t.getItems()) {
+//				if (ti.getBackground().equals(new Color (null, 0,255,255))){
+//					SearchServices ss = new SearchServicesImpl();
+//					List <String> lista = ss.getMethodLines();
+//					for (int i = 0; i < lista.size(); i++) {
+//						String [] sub1 = lista.get(i).split(" - ");
+//						String methodname = sub1[1];
+//						if (ti.getText().contains(methodname)) {
+//							String [] sub2 = lista.get(i).split("::");
+//							String line = sub1[1];
+//							text.setText(line);
+//						}
+//					}
+//				}
+//			}
 			
 		}
 		
