@@ -3,6 +3,9 @@ package pt.iscte.pidesco.outline.internal;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import org.eclipse.core.runtime.IExtension;
+import org.eclipse.core.runtime.IExtensionRegistry;
+import org.eclipse.core.runtime.Platform;
 import org.eclipse.jface.viewers.TreeViewer;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Color;
@@ -15,7 +18,28 @@ import java.util.List;
 
 public class OutlineservicesImpl implements OutlineServices{
 
+	private static final String EXT_POINT_HIGHLIGHT = "pt.iscte.pidesco.highlight";
+	
+	public  OutlineservicesImpl () {
+		
+	}
+	
 
+	public  OutlineservicesImpl (String methodname) {
+		IExtensionRegistry reg = Platform.getExtensionRegistry();
+        for(IExtension ext : reg.getExtensionPoint(EXT_POINT_HIGHLIGHT).getExtensions()) {
+            OutlineServices outlineServices = null;
+            try {
+                outlineServices = (OutlineServices) ext.getConfigurationElements()[0].createExecutableExtension("class");
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            if(outlineServices != null ) {
+               outlineServices.highlightText(methodname);
+            }
+        }
+	}
+	
 	@Override
 	public void addListener(OutListener listener) {
 		OutlineActivator.getInstance().addListener(listener);

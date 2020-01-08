@@ -3,7 +3,7 @@
 <schema targetNamespace="pt.iscte.pidesco.outline" xmlns="http://www.w3.org/2001/XMLSchema">
 <annotation>
       <appinfo>
-         <meta.schema plugin="pt.iscte.pidesco.outline" id="outline" name="Highlight"/>
+         <meta.schema plugin="pt.iscte.pidesco.outline" id="Highlight" name="Highlight Element"/>
       </appinfo>
       <documentation>
          [Enter description of this extension point.]
@@ -17,6 +17,9 @@
          </appinfo>
       </annotation>
       <complexType>
+         <sequence>
+            <element ref="highlight"/>
+         </sequence>
          <attribute name="point" type="string" use="required">
             <annotation>
                <documentation>
@@ -46,11 +49,14 @@
 
    <element name="highlight">
       <complexType>
-         <attribute name="Methodname" type="string">
+         <attribute name="classe" type="string" use="required">
             <annotation>
                <documentation>
                   
                </documentation>
+               <appinfo>
+                  <meta.attribute kind="java" basedOn=":pt.iscte.pidesco.outline.extensibility.getStringHighlight"/>
+               </appinfo>
             </annotation>
          </attribute>
       </complexType>
