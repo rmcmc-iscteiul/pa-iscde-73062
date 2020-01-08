@@ -1,6 +1,6 @@
 package pt.iscte.pidesco.outline.extensibility;
 
-public interface getStringHighlight {
+public interface GetStringHighlight {
 
 	String getStringHighlightText();
 	

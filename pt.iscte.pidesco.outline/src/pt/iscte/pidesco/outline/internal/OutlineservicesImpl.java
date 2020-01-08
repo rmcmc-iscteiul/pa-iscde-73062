@@ -13,33 +13,30 @@ import org.eclipse.swt.widgets.Tree;
 import org.eclipse.swt.widgets.TreeItem;
 
 import pt.iscte.pidesco.javaeditor.service.JavaEditorServices;
+import pt.iscte.pidesco.outline.extensibility.GetStringHighlight;
 import pt.iscte.pidesco.outline.service.OutlineServices;
 import java.util.List;
 
 public class OutlineservicesImpl implements OutlineServices{
 
 	private static final String EXT_POINT_HIGHLIGHT = "pt.iscte.pidesco.highlight";
-	
-	public  OutlineservicesImpl () {
-		
-	}
-	
 
-	public  OutlineservicesImpl (String methodname) {
+	public  OutlineservicesImpl () {
 		IExtensionRegistry reg = Platform.getExtensionRegistry();
-        for(IExtension ext : reg.getExtensionPoint(EXT_POINT_HIGHLIGHT).getExtensions()) {
-            OutlineServices outlineServices = null;
-            try {
-                outlineServices = (OutlineServices) ext.getConfigurationElements()[0].createExecutableExtension("class");
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-            if(outlineServices != null ) {
-               outlineServices.highlightText(methodname);
-            }
-        }
+		for(IExtension ext : reg.getExtensionPoint(EXT_POINT_HIGHLIGHT).getExtensions()) {
+			GetStringHighlight getStringHighlight = null;
+			try {
+				getStringHighlight = (GetStringHighlight) ext.getConfigurationElements()[0].createExecutableExtension("class");
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			if(getStringHighlight != null ) {
+				highlightText(getStringHighlight.getStringHighlightText());
+			}
+		}
 	}
-	
+
+
 	@Override
 	public void addListener(OutListener listener) {
 		OutlineActivator.getInstance().addListener(listener);
