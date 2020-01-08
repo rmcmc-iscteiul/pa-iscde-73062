@@ -38,7 +38,7 @@ public class OutlineservicesImpl implements OutlineServices{
 
 			for (TreeItem ti : tree.getItems()) {
 				if (ti.getText().contains(methodname)) {
-					ti.setBackground(new Color(null, 0,0,255));
+					ti.setBackground(new Color(null, 0,255,255));
 				}
 			}
 		}
